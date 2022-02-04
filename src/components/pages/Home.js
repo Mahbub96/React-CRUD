@@ -18,7 +18,6 @@ export default function Home() {
   }
 
   const deleteUser = async (id) =>{
-    console.log(id)
       await axios.delete(`http://localhost:3001/users/${id}`)
       loadUsers();
   }
@@ -39,15 +38,17 @@ export default function Home() {
           
           {
             users.map((user,index)=>(
-              <tr key={index}>
-                <th scope="row">{index + 1}</th>
+              <tr key={user.id}>
+                <th scope="row">{index+1}</th>
                 <td>{user.name}</td>
                 <td>{user.username}</td>
                 <td>{user.email}</td>
                 <td>
-                  <Link className="btn btn-primary mr-2" to={`/users/view/${user.id}`}>View</Link>
-                  <Link className="btn btn-outline-primary mr-2" to={`/users/edit/${user.id}`}>Edit</Link>
-                  <Link className="btn btn-danger" onClick={()=>{deleteUser(user.id)}}>Delete</Link>
+                <div className="btn-group" role="group" aria-label="Basic example">
+                  <Link className="btn btn-primary" to={`/users/view/${user.id}`}>View</Link>
+                  <Link className="btn btn-outline-danger" to={`/users/edit/${user.id}`}>Edit</Link>
+                  <Link className="btn btn-danger" to="#" onClick={()=>{deleteUser(user.id)}}>Delete</Link>
+                  </div>
                 </td>
             </tr>
             ))

@@ -16,6 +16,7 @@ import View from "./users/View";
 
 
 
+
 function App() {
   return (
       <Router>
@@ -30,6 +31,7 @@ function App() {
             <Route exact path='/users/add' component={AddUser}/>
             <Route exact path='/users/edit/:id' component={EditUser}/>
             <Route exact path='/users/view/:id' component={View}/>
+            {/* <Route exact path='/admin/login' component={Login}/> */}
 
             <Route component={NotFound}/>
 

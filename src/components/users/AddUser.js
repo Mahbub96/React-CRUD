@@ -10,13 +10,14 @@ function AddUser() {
     const [user,setUser] = useState({
         name:"",
         username:"",
-        email:""
+        email:"",
+        phone:"",
+        website:""
     });
 
-    const {name,username,email} = user;
+    const {name,username,email,phone,website} = user; /* for object distructuring */
 
     const onInputChange = e =>{
-        console.log(e.target.value);
         setUser({...user,[e.target.name]: e.target.value})
     }
 
@@ -40,9 +41,21 @@ function AddUser() {
             <input type="text" name='username' value={username} className="form-control" id="user-name" onChange={(e)=> onInputChange(e)}/>
         </div>
         <div className="mb-3">
-            <label htmlFor="emial" className="form-label">Email address</label>
-            <input type="email" name='email' className="form-control" id="emial" value={email} aria-describedby="emailHelp" onChange={(e)=> onInputChange(e)}/>
+            <label htmlFor="email" className="form-label">Email address</label>
+            <input type="email" name='email' className="form-control" id="email" value={email} aria-describedby="emailHelp" onChange={(e)=> onInputChange(e)}/>
             <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
+        </div>
+
+        <div className="mb-3">
+            <label htmlFor="phone" className="form-label">Phone Number</label>
+            <input type="text" name='phone' className="form-control" id="phone" value={phone} onChange={(e)=> onInputChange(e)}/>
+            
+        </div>
+
+        <div className="mb-3">
+            <label htmlFor="website" className="form-label">website Number</label>
+            <input type="text" name='website' className="form-control" id="website" value={website}  onChange={(e)=> onInputChange(e)}/>
+            
         </div>
 
 

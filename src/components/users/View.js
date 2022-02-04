@@ -8,6 +8,7 @@ function View() {
 
 
     const [user,setUser] = useState({
+        
         name:"",
         username:"",
         email:"",
@@ -26,9 +27,15 @@ function View() {
         const res = await axios.get(`http://localhost:3001/users/${id}`);
         setUser(res.data);
     }
-
+    const {name,email,phone,website} = user;
   return <div>
-      {console.log(user)}
+      <div className="container">
+          <label htmlFor="id">user - Id : {id}</label>
+          <h2>Name : {name}</h2>
+          <p>Email : {email}</p>
+          <p>Phone : {phone}</p>
+          <p>website : {website}</p>
+      </div>
   </div>;
 }
 
