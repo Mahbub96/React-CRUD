@@ -2,6 +2,7 @@
   "name": "my-quiz",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://mahbub96.github.io/React-CRUD",
   "dependencies": {
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
@@ -19,6 +20,7 @@
     "axios": "^0.25.0",
     "bootstrap": "^5.1.3",
     "concurrently": "^7.0.0",
+    "gh-pages": "^3.2.3",
     "json-server": "^0.17.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -28,13 +30,15 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start:front": "react-scripts start",
     "json-server": "json-server --watch db.json --port 3001",
-    "start:dev": "concurrently \"yarn start\" \"yarn json-server\"",
+    "start": "concurrently \"yarn start:front\" \"yarn json-server\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "yarn add -D prettier && yarn add -D babel-eslint && npx install-peerdeps --dev eslint-config-airbnb && yarn add -D eslint-config-prettier eslint-plugin-prettier"
+    "lint": "yarn add -D prettier && yarn add -D babel-eslint && npx install-peerdeps --dev eslint-config-airbnb && yarn add -D eslint-config-prettier eslint-plugin-prettier",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
