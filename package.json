@@ -2,7 +2,7 @@
   "name": "my-quiz",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://mahbub96.github.io",
+  "homepage": "https://mahbub96.github.io/React-CRUD",
   "dependencies": {
     "@material-ui/core": "^4.12.3",
     "@material-ui/icons": "^4.11.2",
