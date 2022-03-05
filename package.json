@@ -30,15 +30,13 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start:front": "react-scripts start",
+    "start": "react-scripts start",
     "json-server": "json-server --watch db.json --port 3001",
-    "start": "concurrently \"yarn start:front\" \"yarn json-server\"",
+    "start:dev": "concurrently \"yarn start\" \"yarn json-server\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "yarn add -D prettier && yarn add -D babel-eslint && npx install-peerdeps --dev eslint-config-airbnb && yarn add -D eslint-config-prettier eslint-plugin-prettier",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "lint": "yarn add -D prettier && yarn add -D babel-eslint && npx install-peerdeps --dev eslint-config-airbnb && yarn add -D eslint-config-prettier eslint-plugin-prettier"
   },
   "eslintConfig": {
     "extends": [
